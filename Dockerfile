@@ -5,11 +5,6 @@ ARG NB_UID
 
 RUN pip3 install jupyterlab==1.0.9
 
-USER root
-COPY in-class-exercises ${HOME}/in-class-exercises
-COPY assignments ${HOME}/assignments
-RUN chown -R ${NB_USER} ${HOME}
-
 USER ${NB_USER}
 
 COPY install.R ./
